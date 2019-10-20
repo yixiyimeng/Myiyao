@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>我的下级的品种</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="mylowerbreed page">
+			<div class="lowerlevelinfo">
+				<div class="userinfo flex flex-align-center">
+					<div class="imgbox"><img src="img/demo/avatar.png" alt=""></div>
+					<div>
+						<div class="name">李某代理商（张三）</div>
+						<p>16个品种数</p>
+					</div>
+				</div>
+				<div class="view-list">
+					<div class="view-cell flex">
+						<label>代理区域</label>
+						<span class="txt flex-1 view-select addr-view-select">广东省</span>
+					</div>
+					<div class="view-cell flex">
+						<label>统一设置花瓣比例</label>
+						<span class="txt flex-1 view-select rate-view-select">20%</span>
+					</div>
+				</div>
+			</div>
+			<div class="title">授权的品种</div>
+			<div class="mylowerbreedlist">
+				<div class="goodslist">
+					<div class="goods-item">
+						<div class="flex flex-align-center">
+							<div class="imgbox">
+								<img src="img/demo/goods.jpg" alt="">
+							</div>
+							<div class="info">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+							</div>
+						</div>
+						<div class="btnlist">
+							<a href="javascript:;" class="del">删除</a>
+							<a href="javascript:;" class="edit">编辑</a>
+						</div>
+					</div>
+					<div class="goods-item">
+						<div class="flex flex-align-center">
+							<div class="imgbox">
+								<img src="img/demo/goods.jpg" alt="">
+							</div>
+							<div class="info">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+							</div>
+						</div>
+						<div class="btnlist">
+							<a href="">删除</a>
+							<a href="">编辑</a>
+						</div>
+					</div>
+					<div class="goods-item">
+						<div class="flex flex-align-center">
+							<div class="imgbox">
+								<img src="img/demo/goods.jpg" alt="">
+							</div>
+							<div class="info">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+							</div>
+						</div>
+						<div class="btnlist">
+							<a href="">删除</a>
+							<a href="">编辑</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 按钮 -->
+			<div class="actionbar flex">
+				<a href="javascript:;">复制品种</a>
+				<a href="javascript:;" class="flex-1">添加品种</a>
+			</div>
+		</div>
+
+		<!-- 删除提示框 -->
+		<div class="win win-alert">
+			<div class="win-body">
+				<div class="title">提示</div>
+				<div class="win-bd alert">
+					<p>删除授权品种后，该下级及其下所有的所有下级（如医药代表、医生）将不能使用该品种。是否确认删除？</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<!-- 设置比例弹出框 -->
+		<div class="win win-setrate">
+			<div class="win-body">
+				<div class="title blue-title">共16个品种</div>
+				<div class="win-bd prompt">
+					<div class="subtitle">设置代理默认花瓣比例</div>
+					<!--  -->
+					<div class="input-row rate-input-row mt20"><input type="text" placeholder="花瓣比例"></div>
+					<div class="subtitle mt20">应用到所有授权品种</div>
+					<div class="input-row select-input-row mt20">是，批量变更已有品种比例</div>
+					<p class="tip red mt20">温馨提示：花瓣值等于销售金额乘以花瓣比例。</p>
+					<p class="tip">设置后，默认花瓣比例将应用到所有授权的品种。你也可以单个品种设置花瓣比例。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<div class="win win-setonerate">
+			<div class="win-body">
+				<div class="win-bd prompt">
+					<div class="subtitle">同仁堂 锁阳固精丸 9克*10丸 补肾固精<span>705846</span></div>
+					<div class="mt20">当前售价：<span class="red">￥100.00</span></div>
+					<div>我的花瓣比例：50%</div>
+					<div class="subtitle mt30">设置代理花瓣比例</div>
+					<div class="input-row rate-input-row mt20"><input type="text" placeholder="花瓣比例"></div>
+					<p class="tip red mt20">温馨提示：花瓣值等于销售金额乘以花瓣比例。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/mobileSelect.js"></script>
+<script>
+	var typelist = [{
+			id: 1,
+			value: '海王星辰  车陂店'
+		},
+		{
+			id: 2,
+			value: '海王星辰  车陂店2'
+		}, {
+			id: 3,
+			value: '海王星辰  车陂店3'
+		}
+	]
+	var mobileSelect1 = new MobileSelect({
+		trigger: '.addr-view-select',
+		title: '代理区域',
+		wheels: [{
+			data: typelist
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+
+		}
+	});
+	/* 统一设置比例 */
+	$('.rate-view-select').click(function() {
+		$('.win-setrate').fadeIn()
+	});
+	/* 统一设置比例 弹出框确认事件 */
+	$('.win-setrate .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	});
+	/* 编辑 弹出框*/
+	$('.goodslist').on('click', '.edit', function() {
+		$('.win-setonerate').fadeIn()
+	});
+	/* 编辑 弹出框确认事件 */
+	$('.win-setonerate .primary').click(function() {
+		// $(this).closest('.win').fadeOut()
+		showMessage('花瓣比例上限不允许超过40%，请重新设置')
+	})
+	/* 删除提示框 */
+	$('.goodslist').on('click', '.del', function() {
+		$('.win-alert').fadeIn()
+	});
+	/* 删除 弹出框确认事件 */
+	$('.win-alert .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	})
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>可复制品种的对象</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="copyuser page">
+			<div class="searchbar flex">
+				<input class="flex-1" type="text" placeholder="名称/编码/首拼音">
+				<a href="javascript:;"></a>
+			</div>
+
+			<div class="copylist">
+				<div class="copy-item">
+					<div class="flex copy-userinfo flex-align-center">
+						<div class="imgbox"><img src="img/demo/avatar.png" alt=""></div>
+						<div class="flex-1">
+							<p class="companyname">珠海联邦制药股份有限公司</p>
+							<p>广东省 珠海市 </p>
+						</div>
+					</div>
+					<div class="action flex flex-pack-justify flex-align-center">
+						<span>16个品种</span>
+						<a href="javascript:;">复制</a>
+					</div>
+				</div>
+				<div class="copy-item">
+					<div class="flex copy-userinfo flex-align-center">
+						<div class="imgbox"><img src="img/demo/avatar.png" alt=""></div>
+						<div class="flex-1">
+							<p class="companyname">珠海联邦制药股份有限公司</p>
+							<p>广东省 珠海市 </p>
+						</div>
+					</div>
+					<div class="action flex flex-pack-justify flex-align-center">
+						<span>16个品种</span>
+						<a href="javascript:;">复制</a>
+					</div>
+				</div>
+				<div class="copy-item">
+					<div class="flex copy-userinfo flex-align-center">
+						<div class="imgbox"><img src="img/demo/avatar.png" alt=""></div>
+						<div class="flex-1">
+							<p class="companyname">珠海联邦制药股份有限公司</p>
+							<p>广东省 珠海市 </p>
+						</div>
+					</div>
+					<div class="action flex flex-pack-justify flex-align-center">
+						<span>16个品种</span>
+						<a href="javascript:;">复制</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 确认复制提示框 -->
+		<div class="win win-alert">
+			<div class="win-body">
+				<div class="title">提示</div>
+				<div class="win-bd alert">
+					<p>该品种暂未确认售价，您可在线提交建议价，以供核价人员参考确认。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">建议调价</a>
+				</div>
+			</div>
+		</div>
+		<!-- 复制完成提示框2 -->
+		<div class="win win-success">
+			<div class="win-body">
+				<div class="title">提示</div>
+				<div class="win-bd alert">
+					<p>复制完成。有8个品种已存在医生的品种库中，系统已跳过；已成功为当前下级复制了5个品种。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="primary">我知道了</a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/toast.js"></script>
+<script>
+	/* 建议调价提示框 */
+	$('.copylist').on('click', '.action a', function() {
+		$('.win-alert').fadeIn()
+	});
+	/* 建议调价 弹出框确认事件 */
+	$('.win-alert .primary').click(function() {
+		$(this).closest('.win').fadeOut();
+		/* 复制完成提示 */
+		$('.win-success').fadeIn()
+	});
+	/*关闭 复制完成提示 */
+	$('.win-success .primary').click(function() {
+		$(this).closest('.win').fadeOut();
+		
+	})
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>员工绑定</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="frominfo">
+			<div class="view-list theme-lg">
+				<div class="view-cell flex">
+					<label>单位名称</label>
+					<span class="txt flex-1 view-select"></span>
+				</div>
+				<div class="view-cell flex">
+					<label>姓名</label>
+					<input type="text" class="flex-1">
+				</div>
+				<div class="view-cell flex">
+					<label>手机号</label>
+					<input type="tel" class="flex-1">
+				</div>
+				<div class="view-cell flex flex-align-center">
+					<label>验证码</label>
+					<input type="number" class="flex-1">
+					<a href="javascript:;" class="imgCode"><img src="img/code.png" alt=""></a>
+				</div>
+				<div class="view-cell flex flex-align-center">
+					<label>短信验证码</label>
+					<input type="number" class="flex-1">
+					<a href="javascript:;" class="getCode">获取验证码</a>
+				</div>
+				<a href="javascript:;" class="submitBtn mt120">绑定</a>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/mobileSelect.js"></script>
+<script>
+	/**
+	 * 参数说明
+	 * @param trigger(必填参数) 触发对象的id/class/tag
+	 * @param wheels(必填参数)  数据源,需要显示的数据
+	 * @param title 控件标题
+	 * @param position 初始化定位
+	 * @param callback 选择成功后触发的回调函数，返回indexArr(选中的选项索引)、data(选中的数据)
+	 * @param transitionEnd 每一次手势滑动结束后触发的回调函数,返回indexArr(当前选中的选项索引)、data(选中的数据)
+	 * @param keyMap 字段名映射
+	 */
+
+	/**
+	 * 函数说明(实例化之后才可用)
+	 * @function setTitle()      参数 string                 设置控件的标题
+	 * @function updateWheel()   参数 sliderIndex, data      重新渲染指定的轮子(可用于先实例化，后通过ajax获取数据的场景)
+	 * @function updateWheels()  参数 data                   重新渲染所有轮子,仅限级联数据格式使用(可用于先实例化，后通过ajax获取数据的场景)
+	 * @function locatePostion() 参数 sliderIndex, posIndex  传入位置数组，重定位轮子的位置
+	 * @function show()          参数 无参                   唤起弹窗组件    
+	 * @function getValue()      参数 无参                   获取组件选择的值     
+	 */
+
+
+	var typelist = [{
+			id: 1,
+			value: '海王星辰  车陂店'
+		},
+		{
+			id: 2,
+			value: '海王星辰  车陂店2'
+		}, {
+			id: 3,
+			value: '海王星辰  车陂店3'
+		}
+	]
+	var mobileSelect1 = new MobileSelect({
+		trigger: '.view-select',
+		title: '选择单位',
+		wheels: [{
+			data: typelist
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+
+		}
+	});
+</script>

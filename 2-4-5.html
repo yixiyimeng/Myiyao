@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>我的下级的品种添加</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="mylowerbreed page">
+			<div class="searchbar flex">
+				<input class="flex-1" type="text" placeholder="名称/编码/首拼音">
+				<a href="javascript:;"></a>
+			</div>
+			<!-- 筛选 -->
+			<div class="filterbar mt30">
+				<div class="clearfix">
+					<span>销售<i class="sort"></i></span>
+					<span>比例<i class="sort"></i></span>
+				</div>
+				<div class="clearfix">
+					<span>自有<i class="down"></i></span>
+					<span>品牌<i class="down"></i></span>
+					<span>科室<i class="down"></i></span>
+					<span>分类<i class="down"></i></span>
+				</div>
+			</div>
+			<div class="addmylowerbreedlist">
+				<div class="goodslist">
+					<div class="goods-item flex flex-align-center">
+						<i class="check"></i>
+						<div class="imgbox">
+							<img src="img/demo/goods.jpg" alt="">
+						</div>
+						<div class="info flex-1 flex">
+							<div class="flex-1">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+
+							</div>
+							<div class="action">
+								<a href="javascript:;" class="add">添加</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="goods-item flex flex-align-center">
+						<i class="check"></i>
+						<div class="imgbox">
+							<img src="img/demo/goods.jpg" alt="">
+						</div>
+						<div class="info flex-1 flex">
+							<div class="flex-1">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+
+							</div>
+							<div class="action">
+								<a href="javascript:;" class="edit">建议价</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- 按钮 -->
+			<div class="selectftbar flex flex-align-center">
+				<div class="flex-1">
+					<div class="allcheck"><i class="check"></i>全选</div>
+				</div>
+				<span>已选<em>0</em>个</span>
+				<a href="javascript:;">批量添加</a>
+			</div>
+		</div>
+
+		<!-- 建议调价提示框 -->
+		<div class="win win-alert">
+			<div class="win-body">
+				<div class="title">提示</div>
+				<div class="win-bd alert">
+					<p>该品种暂未确认售价，您可在线提交建议价，以供核价人员参考确认。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">建议调价</a>
+				</div>
+			</div>
+		</div>
+		<!-- 批量添加 -->
+		<div class="win win-setrate">
+			<div class="win-body">
+				<div class="title blue-title">已选<em>0</em>个品种</div>
+				<div class="win-bd prompt">
+					<div class="subtitle">设置代理默认花瓣比例</div>
+					<div class="input-row rate-input-row mt20"><input type="text" placeholder="花瓣比例"></div>
+					<p class="tip red mt20">温馨提示：花瓣值等于销售金额乘以花瓣比例。</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/toast.js"></script>
+<script>
+	var checknum = 0;
+	/* 选择 */
+	$('.goodslist').on('click', '.check', function() {
+		$(this).toggleClass('active');
+		/* 设置全选*/
+		checknum = $('.goodslist .check.active').length;
+		$('.selectftbar em').text(checknum);
+		if ($('.goodslist .check.active').length == $('.goodslist .check').length) {
+			$('.selectftbar .allcheck .check').addClass('active')
+		} else {
+			$('.selectftbar .allcheck .check.active').removeClass('active')
+		}
+	});
+	/* 全选 */
+	$('.selectftbar .allcheck').click(function() {
+		if ($(this).find('.check').hasClass('active')) {
+			$('.check.active').removeClass('active')
+		} else {
+			$('.check').addClass('active')
+		}
+		checknum = $('.goodslist .check.active').length;
+		$('.selectftbar em').text(checknum);
+	})
+	/* 统一设置比例 */
+	$('.selectftbar a').click(function() {
+		if(checknum==0){
+			showMessage('请至少选择一个品种')
+			return false;
+			}
+		$('.win-setrate .title em').text(checknum);
+		$('.win-setrate').fadeIn()
+	});
+	/* 统一设置比例 弹出框确认事件 */
+	$('.win-setrate .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	});
+	
+	/* 建议调价提示框 */
+	$('.goodslist').on('click', '.edit', function() {
+		$('.win-alert').fadeIn()
+	});
+	/* 建议调价 弹出框确认事件 */
+	$('.win-alert .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	})
+</script>

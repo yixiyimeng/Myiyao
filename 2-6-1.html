@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>我的信息</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="frominfo">
+			<div class="view-list">
+				<div class="view-cell username">
+					<div class="flex">
+						<label>认证信息</label>
+						<span class="txt flex-1">医药代表</span>
+					</div>
+				</div>
+				<div class="view-cell username">
+					<div class="flex">
+						<label>姓名</label>
+						<span class="txt flex-1">张某某</span>
+					</div>
+				</div>
+				<div class="view-cell username">
+					<div class="flex">
+						<label>手机号</label>
+						<span class="txt flex-1">133***334</span>
+						<a href="" class="link">更换</a>
+					</div>
+				</div>
+				<div class="view-cell username">
+					<div class="flex">
+						<label>男</label>
+						<span class="txt flex-1 view-select sex-view-select">男</span>
+					</div>
+				</div>
+				<div class="view-cell username">
+					<div class="flex">
+						<label>地区</label>
+						<span class="txt flex-1 view-select addr-view-select">请选择</span>
+					</div>
+				</div>
+				<div class="view-cell username">
+					<div class="flex">
+						<label>详细地址</label>
+						<textarea name="" id="" rows="3" placeholder="请输入" class="flex-1"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sendInfo">保存</div>
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/mobileSelect.js"></script>
+<script>
+	var typelist = [{
+			id: 0,
+			value: '男'
+		},
+		{
+			id: 1,
+			value: '女'
+		}
+	];
+	var typelist2 = [{
+			id: 1,
+			value: '海王星辰  车陂店'
+		},
+		{
+			id: 2,
+			value: '海王星辰  车陂店2'
+		}, {
+			id: 3,
+			value: '海王星辰  车陂店3'
+		}
+	]
+	var mobileSelect1 = new MobileSelect({
+		trigger: '.sex-view-select',
+		title: '选择性别',
+		wheels: [{
+			data: typelist
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+
+		}
+	});
+	var mobileSelect2 = new MobileSelect({
+		trigger: '.addr-view-select',
+		title: '选择地区',
+		wheels: [{
+			data: typelist2
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+
+		}
+	});
+</script>
