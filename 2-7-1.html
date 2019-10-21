@@ -17,10 +17,71 @@
 		<link rel="stylesheet" href="css/base.css">
 	</head>
 	<body>
-		<div class="timefilterbar modbox">
-			<div class="flex">
-				<label>开始时间</label>
-				<input class="startTime flex-1" id="startTime" />
+		<div class="page mycount">
+			<div class="timefilterbar modbox">
+				<div class="flex">
+					<label>开始时间</label>
+					<input class="flex-1" id="startTime" />
+				</div>
+				<div class="flex">
+					<label>开始时间</label>
+					<input class="flex-1" id="endTime" />
+				</div>
+				<a href="javascript:;">查询</a>
+			</div>
+			<!-- tab -->
+			<div class="tab mt30">
+				<div class="tab-hd flex flex-align-center">
+					<span class="flex-1 active">最近7天</span>
+					<span class="line"></span>
+					<span class="flex-1">最近15天</span>
+					<span class="line"></span>
+					<span class="flex-1">最近30天</span>
+				</div>
+				<div class="tab-bd">
+					<div class="totallist">
+						<div class="flex flex-align-center">
+							<div class="flex-1">汇总</div>
+							<div class="num">400</div>
+						</div>
+						<div class="flex flex-align-center">
+							<div class="flex-1">
+								<p class="name">珠海联邦制药股份有限公司</p>
+								<p class="time">2019-08-06</p>
+							</div>
+							<div class="num">400</div>
+						</div>
+						<div class="flex flex-align-center">
+							<div class="flex-1">
+								<p class="name">珠海联邦制药股份有限公司</p>
+								<p class="time">2019-08-06</p>
+							</div>
+							<div class="num">400</div>
+						</div>
+						<div class="flex flex-align-center">
+							<div class="flex-1">
+								<p class="name">珠海联邦制药股份有限公司</p>
+								<p class="time">2019-08-06</p>
+							</div>
+							<div class="num">400</div>
+						</div>
+						<div class="flex flex-align-center">
+							<div class="flex-1">
+								<p class="name">珠海联邦制药股份有限公司</p>
+								<p class="time">2019-08-06</p>
+							</div>
+							<div class="num">400</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 结算 -->
+			<div class="countftbar flex flex-align-center">
+				<div class="flex-1">
+					<p>未结算花瓣</p>
+					<p>总合计：<em>500</em></p>
+				</div>
+				<div class="countBtn">结算记录</div>
 			</div>
 		</div>
 	</body>
@@ -30,7 +91,12 @@
 <script src="js/Mdate.js"></script>
 <script src="js/toast.js"></script>
 <script>
-	new Mdate("startTime",{
-		 format: "-"
+	new Mdate("startTime", {
+		beginYear: '2018',
+		format: "-"
+	});
+	new Mdate("endTime", {
+		beginYear: '2018',
+		format: "-"
 	});
 </script>

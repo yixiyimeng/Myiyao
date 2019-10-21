@@ -150,15 +150,17 @@
 	width: auto;
 	color: #666;
 	position: relative;
-	
+
 }
-.view-list .view-cell textarea{
+
+.view-list .view-cell textarea {
 	height: 2rem;
 	padding-top: .35rem;
 	font-size: .3rem;
 	padding-left: .3rem;
 	text-indent: 0;
 }
+
 .view-list .view-cell .getCode {
 	color: #00a0e9;
 	border: 1px solid #00a0e9;
@@ -187,7 +189,8 @@
 	margin-top: .3rem;
 }
 
-.view-list .submitBtn,.view-list+.submitBtn  {
+.view-list .submitBtn,
+.view-list+.submitBtn {
 	display: block;
 	background-image: linear-gradient(90deg, #00a0e9 20%, #13b5ff 80%);
 	text-align: center;
@@ -1163,10 +1166,140 @@
 .reprice .view-list {
 	padding: 0 .2rem;
 }
-.reprice  .submitBtn{
+
+.reprice .submitBtn {
 	margin: 1rem auto 0;
 	width: 4.9rem;
 }
+
 .red {
 	color: #e91616;
+}
+
+/* 事件端筛选 */
+.timefilterbar {
+	color: #333;
+	font-size: .28rem;
+	line-height: .8rem;
+	text-align: center;
+
+}
+
+.timefilterbar>div {
+	border-bottom: 1px solid #eee;
+	padding: 0 .2rem;
+}
+
+.timefilterbar input {
+	text-align: right;
+	padding-right: .65rem;
+	background: url(../img/time.png) no-repeat right center;
+	background-size: .41rem auto;
+	border: none;
+	color: #666;
+}
+
+.timefilterbar a {
+	color: #00a0e9;
+	font-size: .3rem;
+}
+
+.tab .tab-hd {
+	border-bottom: 1px solid #eee;
+	line-height: .8rem;
+	font-size: .28rem;
+	color: #999;
+	text-align: center;
+	background: #fff;
+	position: relative;
+	z-index: 999;
+}
+
+.tab .tab-hd .line {
+	width: .02rem;
+	height: .24rem;
+	background: #eee;
+}
+
+.tab .tab-hd span.active {
+	color: #00a0e9;
+	position: relative;
+}
+
+.tab .tab-hd span.active:after {
+	content: '';
+	height: 1px;
+	position: absolute;
+	left: .4rem;
+	right: .4rem;
+	bottom: 0;
+	background: #00a0e9;
+}
+
+.mycount .tab .tab-bd {
+	position: absolute;
+	top: 3.8rem;
+	left: 0;
+	right: 0;
+	bottom: 1.3rem;
+	overflow: auto;
+	padding: 0 .3rem;
+}
+
+.totallist>div {
+	height: 1.1rem;
+	font-size: .3rem;
+	color: #333;
+	border-bottom: 1px solid #eee;
+}
+
+.totallist>div .num {
+	color: #00a0e9;
+	font-size: .32rem;
+}
+
+.totallist>div .name {
+	font-size: .24rem;
+}
+
+.totallist>div .time {
+	font-size: .24rem;
+	color: #999;
+}
+
+/* 结算 */
+.countftbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	box-shadow: 0 -5px 5px rgba(0, 0, 0, .05);
+	height: 1.2rem;
+}
+
+.countftbar .flex-1 {
+	padding-left: .3rem;
+	color: #999;
+	font-size: .22rem;
+}
+
+.countftbar .flex-1 p+p {
+	font-size: .28rem;
+	color: #333;
+}
+
+.countftbar .flex-1 p+p em {
+	color: #00a0e9;
+}
+
+.countftbar .countBtn {
+	color: #fff;
+	font-size: .32rem;
+	background: #00a0e9;
+	display: block;
+	width: 2.2rem;
+	height: 1.2rem;
+	text-align: center;
+	line-height: 1.2rem;
 }
