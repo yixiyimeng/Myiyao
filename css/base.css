@@ -58,6 +58,10 @@
 	animation-name: fadeOut
 }
 
+.mt10 {
+	margin-top: .1rem;
+}
+
 .mt20 {
 	margin-top: .2rem;
 }
@@ -72,6 +76,20 @@
 
 .mt120 {
 	margin-top: 1.2rem;
+}
+.mr25{
+	margin-right: .25rem;
+}
+.pl30 {
+	padding-left: .3rem;
+}
+
+.pr30 {
+	padding-right: .3rem;
+}
+
+.ft28 {
+	font-size: .28rem;
 }
 
 .imgbox img {
@@ -651,6 +669,7 @@
 	bottom: 0;
 	background: rgba(0, 0, 0, .4);
 	display: none;
+	z-index:999 ;
 }
 
 .win>div {
@@ -845,6 +864,12 @@
 	color: #333;
 	height: .72rem;
 	line-height: .36rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 .goodslist .goods-item .name span {
@@ -1069,7 +1094,9 @@
 }
 
 .copylist .copy-item .imgbox,
-.mygoods .userinfo .imgbox {
+.mygoods .userinfo .imgbox,
+.mystatement .userinfo .imgbox,
+.myflowerDetails .myflower-userinfo .imgbox {
 	width: 1rem;
 	overflow: hidden;
 	height: 1rem;
@@ -1084,7 +1111,8 @@
 }
 
 .copylist .copy-item .copy-userinfo,
-.mygoods .userinfo {
+.mygoods .userinfo,
+.mystatement .userinfo {
 	padding-top: .2rem;
 	padding-bottom: .2rem;
 	font-size: .24rem;
@@ -1093,7 +1121,8 @@
 }
 
 .copylist .copy-item .copy-userinfo .companyname,
-.mygoods .userinfo .companyname {
+.mygoods .userinfo .companyname,
+.mystatement .userinfo .companyname {
 	font-size: .3rem;
 	color: #333;
 }
@@ -1173,7 +1202,7 @@
 }
 
 .red {
-	color: #e91616;
+	color: #e91616 !important;
 }
 
 /* 事件端筛选 */
@@ -1204,7 +1233,8 @@
 	font-size: .3rem;
 }
 
-.tab .tab-hd {
+.tab .tab-hd,
+.blue-tab .tab-hd {
 	border-bottom: 1px solid #eee;
 	line-height: .8rem;
 	font-size: .28rem;
@@ -1212,10 +1242,11 @@
 	text-align: center;
 	background: #fff;
 	position: relative;
-	z-index: 999;
+	z-index: 99;
 }
 
-.tab .tab-hd .line {
+.tab .tab-hd .line,
+.blue-tab .tab-hd .line {
 	width: .02rem;
 	height: .24rem;
 	background: #eee;
@@ -1236,7 +1267,10 @@
 	background: #00a0e9;
 }
 
-.mycount .tab .tab-bd {
+.mycount .tab .tab-bd,
+.myflowerDetails .tab .tab-bd,
+.mystatement,
+.mylowercount .tab .tab-bd {
 	position: absolute;
 	top: 3.8rem;
 	left: 0;
@@ -1276,6 +1310,7 @@
 	background: #fff;
 	box-shadow: 0 -5px 5px rgba(0, 0, 0, .05);
 	height: 1.2rem;
+	z-index: 991;
 }
 
 .countftbar .flex-1 {
@@ -1293,7 +1328,8 @@
 	color: #00a0e9;
 }
 
-.countftbar .countBtn {
+.countftbar .countBtn,
+.countftbar .countlink{
 	color: #fff;
 	font-size: .32rem;
 	background: #00a0e9;
@@ -1302,4 +1338,97 @@
 	height: 1.2rem;
 	text-align: center;
 	line-height: 1.2rem;
+}
+.countftbar .countlink{
+	color: #00a0e9;
+	background: none;
+}
+
+/* 我的花瓣明细 */
+.myflowerDetails.page {
+	padding: 0;
+}
+
+.myflowerDetails .myflower-userinfo {
+	background: #00a0e9;
+	color: #fff;
+}
+
+.myflowerDetails .myflower-userinfo .userinfo {
+	padding: .3rem;
+	font-family: .24rem;
+}
+
+.myflowerDetails .myflower-userinfo .userinfo .companyname {
+	font-size: .3rem;
+}
+
+.blue-tab .tab-hd {
+	background: #00a0e9;
+	color: #fff;
+	border-bottom: none;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.blue-tab .tab-hd .line {
+	background: rgba(255, 255, 255, .1);
+}
+
+.myflowerDetails .tab .tab-bd {
+	top: 6.2rem;
+}
+
+.myflowerDetails .tab .tab-bd.goods-tab-bd {
+	bottom: .3rem;
+	display: none;
+}
+
+.myflowerDetails .goodslist .goods-item {
+	padding: .3rem 0;
+	font-size: .22rem;
+	color: #999;
+	border-bottom: 1px solid #eee;
+}
+
+.myflowerDetails .goodslist .goods-item .imgbox {
+	width: 1.6rem;
+}
+
+.myflowerDetails .goodslist .goods-item .info>div:first-child {
+	margin-bottom: .5rem;
+	height: .72rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.myflowerDetails .goodslist .goods-item .money {
+	width: 1.68rem;
+	text-align: right;
+	font-size: .32rem;
+	color: #00a0e9;
+}
+
+.myflowerDetails .goodslist .goods-item .money.red {
+	color: #e91616;
+}
+
+/* 我的结算记录 */
+.mystatement {
+	top: 3rem;
+	bottom: 0;
+}
+
+.mystatement .userinfo .num em {
+	color: #00a0e9;
+	font-size: .32rem;
+	margin-right: .1rem;
+}
+
+/* 我的下级花瓣汇总 */
+.mylowercount .tab .tab-bd {
+	bottom: 0;
 }

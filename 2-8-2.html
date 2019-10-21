@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>我的花瓣明细</title>
+		<title>下级的花瓣明细</title>
 		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="app-mobile-web-app-capable" content="yes" />
@@ -58,49 +58,29 @@
 						<div class="totallist">
 							<div class="flex flex-align-center">
 								<div class="flex-1">汇总</div>
-								<div class="num">400</div>
+								<div class="num red">-400</div>
 							</div>
 							<div class="flex flex-align-center">
 								<div class="flex-1 ft28">
 									2019-08-06
 								</div>
-								<div class="num">400</div>
+								<div class="num red">-400</div>
 							</div>
 							<div class="flex flex-align-center">
 								<div class="flex-1 ft28">
 									2019-08-06
 								</div>
-								<div class="num">400</div>
-							</div>
-							<div class="flex flex-align-center">
+								<div class="num red">-400</div>
+							</div><div class="flex flex-align-center">
 								<div class="flex-1 ft28">
 									2019-08-06
 								</div>
-								<div class="num">400</div>
-							</div>
-							<div class="flex flex-align-center">
+								<div class="num red">-400</div>
+							</div><div class="flex flex-align-center">
 								<div class="flex-1 ft28">
 									2019-08-06
 								</div>
-								<div class="num">400</div>
-							</div>
-							<div class="flex flex-align-center">
-								<div class="flex-1 ft28">
-									2019-08-06
-								</div>
-								<div class="num">400</div>
-							</div>
-							<div class="flex flex-align-center">
-								<div class="flex-1 ft28">
-									2019-08-06
-								</div>
-								<div class="num">400</div>
-							</div>
-							<div class="flex flex-align-center">
-								<div class="flex-1 ft28">
-									2019-08-06
-								</div>
-								<div class="num">400</div>
+								<div class="num red">-400</div>
 							</div>
 						</div>
 					</div>
@@ -155,9 +135,23 @@
 				<div class="flex flex-align-center">
 					<div class="flex-1">
 						<p>未结算花瓣</p>
-						<p>总合计：<em>500</em></p>
+						<p>总合计：<em class="red">-500</em></p>
 					</div>
-					<div class="countBtn">结算记录</div>
+					<div class="countlink">计算记录</div>
+					<div class="countBtn">花瓣结算</div>
+				</div>
+			</div>
+		</div>
+		<div class="win win-setrate">
+			<div class="win-body">
+				<div class="win-bd prompt">
+					<div class="subtitle">下发花瓣数量</div>
+					<input class="mt20" type="text" placeholder="花瓣值">
+					<p class="tip mt20"><span class="red">温馨提示：</span> 花瓣下发后，系统将通知到您对应的下级用户，请在下发前与您的下级确认，以免引起操作误解</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
 				</div>
 			</div>
 		</div>
@@ -166,6 +160,7 @@
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/iScroll.js"></script>
 <script src="js/Mdate.js"></script>
+<script src="js/common.js"></script>
 <script src="js/toast.js"></script>
 <script>
 	new Mdate("startTime", {
@@ -185,5 +180,13 @@
 		} else {
 			$('.countftbar').hide();
 		}
-	})
+	});
+	/* 计算 */
+	$('.countBtn').click(function(){
+		$('.win-setrate').fadeIn()
+	});
+	/* 统一设置比例 弹出框确认事件 */
+	$('.win-setrate .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	});
 </script>
