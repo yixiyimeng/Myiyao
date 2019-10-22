@@ -1026,7 +1026,8 @@
 
 /* 添加下级品种 */
 .addmylowerbreedlist,
-.mybreed .mybreedlist {
+.mybreed .mybreedlist,
+.cashpage .cashlist{
 	position: absolute;
 	top: 3.2rem;
 	bottom: 1.2rem;
@@ -1582,6 +1583,9 @@
 }
 
 /* 兑现记录 */
+.cashpage .cashlist{
+	
+}
 .cashlist .cash-item {
 	padding: .3rem 0;
 	border-bottom: 1px solid #eee;
@@ -1617,9 +1621,11 @@
 	background: #eee;
 	display: block;
 }.cashpage .timefilter>div{
-	padding: 0 .8rem;
+	margin: 0 .4rem;
+	padding-right: .3rem;
 	text-align: center;
 	position: relative;
+	height: 1rem;
 }.cashpage .timefilter>div input{
 	width: 100%;
 	position: absolute;
@@ -1628,8 +1634,14 @@
 	top: 0;
 	display: block;
 	background: none;
-	height: .7rem;
-	padding-top: .3rem;
+	height: 1rem;
+	padding-top: .4rem;
 	text-align: center;
 	border: none;
+	background: url(../img/down-arrow2.png) no-repeat right center;
+	background-size: .32rem auto;
+}
+.cashpage .cashlist{
+	top: 1.7rem;
+	bottom: 0;
 }
