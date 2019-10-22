@@ -1027,7 +1027,7 @@
 /* 添加下级品种 */
 .addmylowerbreedlist,
 .mybreed .mybreedlist,
-.cashpage .cashlist{
+.cashpage .cashlist {
 	position: absolute;
 	top: 3.2rem;
 	bottom: 1.2rem;
@@ -1583,9 +1583,8 @@
 }
 
 /* 兑现记录 */
-.cashpage .cashlist{
-	
-}
+.cashpage .cashlist {}
+
 .cashlist .cash-item {
 	padding: .3rem 0;
 	border-bottom: 1px solid #eee;
@@ -1606,27 +1605,36 @@
 	border-radius: 100%;
 	margin-right: .3rem;
 }
-.cashlist .cash-item .time{
+
+.cashlist .cash-item .time {
 	color: #999;
 }
+
 .cashlist .cash-item .green {
 	color: #009900;
 }
-.cashpage .timefilter{
+
+.cashpage .timefilter {
 	border-bottom: 1px solid #eee;
 	padding: .3rem 0;
-}.cashpage .timefilter .line{
+}
+
+.cashpage .timefilter .line {
 	width: 1px;
 	height: .74rem;
 	background: #eee;
 	display: block;
-}.cashpage .timefilter>div{
+}
+
+.cashpage .timefilter>div {
 	margin: 0 .4rem;
 	padding-right: .3rem;
 	text-align: center;
 	position: relative;
 	height: 1rem;
-}.cashpage .timefilter>div input{
+}
+
+.cashpage .timefilter>div input {
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -1641,7 +1649,8 @@
 	background: url(../img/down-arrow2.png) no-repeat right center;
 	background-size: .32rem auto;
 }
-.cashpage .cashlist{
+
+.cashpage .cashlist {
 	top: 1.7rem;
 	bottom: 0;
 }
