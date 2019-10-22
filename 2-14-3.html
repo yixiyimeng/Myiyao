@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>兑现账号</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="page cashpage">
+			<div class="view-list ">
+				<div class="view-cell">
+					<div class="flex">
+						<label>账号公私<em class="red">*</em></label>
+						<span class="txt flex-1 view-select accountType1">对公账号</span>
+					</div>
+				</div>
+				<div class="view-cell ">
+					<div class="flex">
+						<label>账号类型<em class="red">*</em></label>
+						<span class="txt flex-1 view-select accountType2"></span>
+					</div>
+				</div>
+				<div class="view-cell account">
+					<div class="flex"><label>账号明细</label>
+						<div class="flex-1">
+							<input type="text" placeholder="银行卡">
+							<input type="text" placeholder="账户名称">
+							<input type="text" placeholder="账户">
+							<input type="text" name="" id="" value="" placeholder="所属银行支行" />
+						</div>
+					</div>
+				</div>
+				<div class="view-cell account AlipayAccount">
+					<div class="flex"><label>账号明细</label>
+						<div class="flex-1">
+							<input type="text" placeholder="支付账号">
+
+						</div>
+					</div>
+				</div>
+				<div class="view-cell">
+					<div class="flex">
+						<label>账户明细<em class="red">*</em></label>
+						<div class="upload">
+							<span class="uploadbtn"><input type="file"></span>
+							<p>可传附件</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="applyBtn">保存</a>
+		</div>
+
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mobileSelect.js"></script>
+<script type="text/javascript">
+	var typelist = [{
+			id: 1,
+			value: '对公账号'
+		},
+		{
+			id: 2,
+			value: '个人账户'
+		}
+	]
+	var typelist2 = [{
+			id: 1,
+			value: '银行卡'
+		},
+		{
+			id: 2,
+			value: '支付宝'
+		}
+	]
+	var mobileSelect1 = new MobileSelect({
+		trigger: '.accountType1',
+		title: '账号公私',
+		wheels: [{
+			data: typelist
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+
+		}
+	});
+	var mobileSelect1 = new MobileSelect({
+		trigger: '.accountType2',
+		title: '账号类型',
+		wheels: [{
+			data: typelist2
+		}],
+		position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+		transitionEnd: function(indexArr, data) {
+			console.log(data);
+		},
+		callback: function(indexArr, data) {
+			// console.log(data);
+			$('.account').eq(indexArr).show().siblings('.account').hide()
+
+		}
+	});
+</script>

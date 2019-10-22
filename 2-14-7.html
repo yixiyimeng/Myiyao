@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>平台花瓣兑现记录</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="page cashpage">
+			<div class="timefilter flex flex-align-center">
+				<div class="flex-1">
+					<label>开始时间</label>
+					<input id="startTime" />
+				</div>
+				<span class="line"></span>
+				<div class="flex-1">
+					<label>开始时间</label>
+					<input id="endTime" />
+				</div>
+			</div>
+			<div class="cashlist">
+				<div class="cash-item">
+					<div class="flex flex-align-center">
+						<div class="imgbox">
+							<img src="img/demo/avatar.png">
+						</div>
+						<div class="flex-1">
+							<div class="flex flex-pack-justify">
+								<span class="num">结算值</span>
+								<span class="state green">已兑现</span>
+							</div>
+							<div class="flex flex-pack-justify mt20">
+								<span>医心达平台</span>
+								<span class="time">2019-08-28 17:50:20</span>
+							</div>
+						</div>
+					</div>
+					<p class="green mt30">花瓣预计在审核通过后的3个工作日内到账。</p>
+				</div>
+				<div class="cash-item">
+					<div class="flex flex-align-center">
+						<div class="imgbox">
+							<img src="img/demo/avatar.png">
+						</div>
+						<div class="flex-1">
+							<div class="flex flex-pack-justify">
+								<span class="num">结算值</span>
+								<span class="state red">已驳回</span>
+							</div>
+							<div class="flex flex-pack-justify mt20">
+								<span>医心达平台</span>
+								<span class="time">2019-08-28 17:50:20</span>
+							</div>
+						</div>
+					</div>
+					<p class="red mt30">驳回原因：账号不对</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/iScroll.js"></script>
+<script src="js/Mdate.js"></script>
+<script src="js/toast.js"></script>
+<script>
+	new Mdate("startTime", {
+		beginYear: '2018',
+		format: "-"
+	});
+	new Mdate("endTime", {
+		beginYear: '2018',
+		format: "-"
+	});
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>分配品种</title>
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="app-mobile-web-app-capable" content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<script src="js/rem.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Mreset.css" />
+		<link rel="stylesheet" href="css/mobileSelect.css">
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<body>
+		<div class="mybreed page">
+			<!-- 筛选 -->
+			<div class="filterbar  modbox">
+				<div class="flex flex-align-center">
+					<span class="flex-1">品牌<i class="down"></i></span>
+					<span class="line"></span>
+					<span class="flex-1">分类<i class="down"></i></span>
+				</div>
+			</div>
+			<div class="mybreedlist">
+				<div class="goodslist">
+					<div class="goods-item flex flex-align-center">
+						<i class="check"></i>
+						<div class="imgbox">
+							<img src="img/demo/goods.jpg" alt="">
+						</div>
+						<div class="info flex-1 flex">
+							<div class="flex-1">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<div class="goods-item flex flex-align-center">
+						<i class="check"></i>
+						<div class="imgbox">
+							<img src="img/demo/goods.jpg" alt="">
+						</div>
+						<div class="info flex-1 flex">
+							<div class="flex-1">
+								<div class="name"><span class="tag">OTC</span><span>曹清华 薏辛除湿止痛12粒*60板</span></div>
+								<div><span class="price">￥100.00</span>
+									<span class="rate">花瓣比例：35%</span></div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- 按钮 -->
+			<div class="selectftbar flex flex-align-center">
+				<div class="flex-1">
+					<div class="allcheck"><i class="check"></i>全选</div>
+				</div>
+				<span>已选<em>0</em>个</span>
+				<a href="javascript:;">分配</a>
+			</div>
+		</div>
+
+		<!-- 批量分配 -->
+		<div class="win win-setrate">
+			<div class="win-body">
+				<div class="title blue-title">已选<em>0</em>个品种</div>
+				<div class="win-bd prompt">
+					<div class="subtitle">设置分润比例</div>
+					<div class="input-row rate-input-row mt20"><input type="text" placeholder="分润比例"></div>
+					<p class="tip red mt20">温馨提示：分润花瓣等于销售金额乘以分润比例</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">确定</a>
+				</div>
+			</div>
+		</div>
+		<!-- 单个分配 -->
+		<div class="win win-setonerate">
+			<div class="win-body">
+				<div class="win-bd prompt">
+					<div class="subtitle">同仁堂 锁阳固精丸 9克*10丸 补肾固精<span>705846</span></div>
+					<div class="mt20">当前售价：<span class="red">￥100.00</span></div>
+					<div>设置分润比例：50%</div>
+					<div class="subtitle mt30">设置分润比例</div>
+					<div class="input-row rate-input-row mt20"><input type="text" placeholder="分润比例"></div>
+					<p class="tip red mt20">温馨提示：分润花瓣等于销售金额乘以分润比例</p>
+				</div>
+				<div class="win-ft flex flex-pack-center">
+					<a href="javascript:;" class="cancel">取消</a>
+					<a href="javascript:;" class="primary">下一步</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.10.1.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/toast.js"></script>
+<script>
+	var checknum = 0;
+	/* 选择 */
+	$('.goodslist').on('click', '.check', function() {
+		$(this).toggleClass('active');
+		/* 设置全选*/
+		checknum = $('.goodslist .check.active').length;
+		$('.selectftbar em').text(checknum);
+		if ($('.goodslist .check.active').length == $('.goodslist .check').length) {
+			$('.selectftbar .allcheck .check').addClass('active')
+		} else {
+			$('.selectftbar .allcheck .check.active').removeClass('active')
+		}
+	});
+	/* 全选 */
+	$('.selectftbar .allcheck').click(function() {
+		if ($(this).find('.check').hasClass('active')) {
+			$('.check.active').removeClass('active')
+		} else {
+			$('.check').addClass('active')
+		}
+		checknum = $('.goodslist .check.active').length;
+		$('.selectftbar em').text(checknum);
+	})
+	/* 分配 */
+	$('.selectftbar a').click(function() {
+		if (checknum == 0) {
+			showMessage('请至少选择一个品种')
+			return false;
+		} else if (checknum == 1) {
+			$('.win-setonerate').fadeIn()
+		} else {
+			$('.win-setrate .title em').text(checknum);
+			$('.win-setrate').fadeIn()
+		}
+	});
+	/* 单个分配 弹出框确认事件 */
+	$('.win-setonerate .primary').click(function() {
+		// $(this).closest('.win').fadeOut()
+		showMessage('花瓣比例上限不允许超过40%，请重新设置')
+	})
+	/* 统一分配 弹出框确认事件 */
+	$('.win-setrate .primary').click(function() {
+		$(this).closest('.win').fadeOut()
+	});
+</script>

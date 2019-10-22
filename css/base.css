@@ -77,9 +77,11 @@
 .mt120 {
 	margin-top: 1.2rem;
 }
-.mr25{
+
+.mr25 {
 	margin-right: .25rem;
 }
+
 .pl30 {
 	padding-left: .3rem;
 }
@@ -169,6 +171,10 @@
 	color: #666;
 	position: relative;
 
+}
+
+.view-list .view-cell input+input {
+	margin-top: .24rem;
 }
 
 .view-list .view-cell textarea {
@@ -436,6 +442,17 @@
 	background-image: url(../img/icon11.png);
 }
 
+.view-list-nav .view-nav-cell i.icon12 {
+	background-image: url(../img/icon12.png);
+}
+
+.view-list-nav .view-nav-cell i.icon13 {
+	background-image: url(../img/icon13.png);
+}
+
+.view-list-nav .view-nav-cell i.icon14 {
+	background-image: url(../img/icon14.png);
+}
 
 /* 邀请二维码 */
 .qrResult {
@@ -669,7 +686,7 @@
 	bottom: 0;
 	background: rgba(0, 0, 0, .4);
 	display: none;
-	z-index:999 ;
+	z-index: 999;
 }
 
 .win>div {
@@ -944,7 +961,8 @@
 }
 
 .mylowerbreed .actionbar,
-.mylowerbreed .selectftbar {
+.mylowerbreed .selectftbar,
+.mybreed .selectftbar {
 	background: #fff;
 	position: fixed;
 	bottom: 0;
@@ -1007,7 +1025,8 @@
 }
 
 /* 添加下级品种 */
-.addmylowerbreedlist {
+.addmylowerbreedlist,
+.mybreed .mybreedlist {
 	position: absolute;
 	top: 3.2rem;
 	bottom: 1.2rem;
@@ -1018,12 +1037,14 @@
 }
 
 .mygoods .goodslist .goods-item,
-.addmylowerbreedlist .goodslist .goods-item {
+.addmylowerbreedlist .goodslist .goods-item,
+.mybreed .mybreedlist .goodslist .goods-item {
 	padding: .3rem 0;
 	border-bottom: 1px solid #f4f4f4;
 }
 
-.addmylowerbreedlist .goodslist .goods-item .check {
+.addmylowerbreedlist .goodslist .goods-item .check,
+.mybreed .mybreedlist .goodslist .goods-item .check {
 	margin-right: .2rem;
 }
 
@@ -1048,21 +1069,25 @@
 }
 
 /* 全选 */
-.mylowerbreed .selectftbar {
+.mylowerbreed .selectftbar,
+.mybreed .selectftbar {
 	padding: 0;
 }
 
-.mylowerbreed .selectftbar .allcheck {
+.mylowerbreed .selectftbar .allcheck,
+.mybreed .selectftbar .allcheck {
 	margin-left: .3rem;
 	color: #666;
 	font-size: .3rem;
 }
 
-.mylowerbreed .selectftbar .allcheck i {
+.mylowerbreed .selectftbar .allcheck i,
+.mybreed .selectftbar .allcheck i {
 	margin-right: .2rem;
 }
 
-.mylowerbreed .selectftbar a {
+.mylowerbreed .selectftbar a,
+.mybreed .selectftbar a {
 	display: block;
 	height: 1rem;
 	background: #00a0e9;
@@ -1146,14 +1171,16 @@
 	border: none;
 }
 
-.mygoods .filterbar {
+.mygoods .filterbar,
+.mybreed .filterbar {
 	line-height: .8rem;
 	font-size: .28rem;
 	color: #666;
 	text-align: center;
 }
 
-.mygoods .filterbar i {
+.mygoods .filterbar i,
+.mybreed .filterbar i {
 	display: inline-block;
 	width: .2rem;
 	height: .8rem;
@@ -1164,7 +1191,8 @@
 	margin-left: .1rem;
 }
 
-.mygoods .filterbar .line {
+.mygoods .filterbar .line,
+.mybreed .filterbar .line {
 	width: 1px;
 	height: .4rem;
 	background: #eee;
@@ -1329,7 +1357,7 @@
 }
 
 .countftbar .countBtn,
-.countftbar .countlink{
+.countftbar .countlink {
 	color: #fff;
 	font-size: .32rem;
 	background: #00a0e9;
@@ -1339,7 +1367,8 @@
 	text-align: center;
 	line-height: 1.2rem;
 }
-.countftbar .countlink{
+
+.countftbar .countlink {
 	color: #00a0e9;
 	background: none;
 }
@@ -1431,4 +1460,176 @@
 /* 我的下级花瓣汇总 */
 .mylowercount .tab .tab-bd {
 	bottom: 0;
+}
+
+/* 分配品牌 */
+.mybreed .mybreedlist {
+	top: 1.3rem;
+}
+
+/* 我的账户 */
+.myaccountpage .view-list-nav {
+	box-shadow: none;
+}
+
+.myaccountpage .myaccount {
+	text-align: center;
+	font-size: .28rem;
+	color: #999;
+	padding: .55rem 0 .45rem;
+}
+
+.myaccountpage .myaccount .num {
+	color: #ff0000;
+	font-size: .6rem;
+	margin: .4rem 0;
+}
+
+.myaccountpage .myaccount a {
+	color: #fff;
+	font-size: .32rem;
+	text-align: center;
+	width: 2.8rem;
+	line-height: .8rem;
+	border-radius: .5rem;
+	background: #00a0e9;
+	display: block;
+	margin: 0 auto;
+}
+
+.myaccountpage .view-list-nav .view-nav-cell {
+	border-bottom: 1px solid #eee;
+}
+
+/* 兑现 */
+.cashpage.page {
+	padding-top: 0;
+}
+
+.cashpage .input-row {
+	border-bottom: 1px solid #eee;
+	color: #333333;
+	font-size: .3rem;
+	padding: .3rem 0;
+}
+
+.cashpage .input-row label {
+	width: 1.95rem;
+	display: block;
+}
+
+.cashpage .input-row:last-child {
+	padding: .52rem 0;
+}
+
+.cashpage .input-row input {
+	color: #ff0000;
+	font-size: .6rem;
+	border: none;
+	display: block;
+	width: 2rem;
+}
+
+.cashpage .applyBtn {
+	color: #fff;
+	display: block;
+	font-size: .32rem;
+	line-height: .8rem;
+	width: 5.03rem;
+	margin: 1rem auto 0;
+	background: #00A0E9;
+	text-align: center;
+	border-radius: .5rem;
+}
+
+.cashpage .view-list .view-cell .view-select:after {
+	transform: rotate(90deg);
+}
+
+.cashpage .view-list .view-cell.account .flex-1 {
+	padding-top: .35rem;
+	padding-bottom: .32rem;
+}
+
+.cashpage .view-list .view-cell .upload {
+	font-size: .3rem;
+	color: #999;
+	line-height: .86rem;
+}
+
+.cashpage .view-list .view-cell .upload .uploadbtn {
+	display: block;
+	height: 1rem;
+	width: 1rem;
+	background: url(../img/upload.png) no-repeat center center;
+	background-size: contain;
+	margin-top: .35rem;
+	margin-left: .3rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.cashpage .view-list .view-cell .upload .uploadbtn input {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 400px;
+	opacity: 0;
+}
+
+.cashpage .view-list .view-cell .AlipayAccount {
+	display: none;
+}
+
+/* 兑现记录 */
+.cashlist .cash-item {
+	padding: .3rem 0;
+	border-bottom: 1px solid #eee;
+	font-size: .28rem;
+	color: #333;
+}
+
+.cashlist .cash-item .num {
+	color: #00A0E9;
+	font-weight: bold;
+	font-size: .3rem;
+}
+
+.cashlist .cash-item .imgbox {
+	height: 1rem;
+	width: 1rem;
+	overflow: hidden;
+	border-radius: 100%;
+	margin-right: .3rem;
+}
+.cashlist .cash-item .time{
+	color: #999;
+}
+.cashlist .cash-item .green {
+	color: #009900;
+}
+.cashpage .timefilter{
+	border-bottom: 1px solid #eee;
+	padding: .3rem 0;
+}.cashpage .timefilter .line{
+	width: 1px;
+	height: .74rem;
+	background: #eee;
+	display: block;
+}.cashpage .timefilter>div{
+	padding: 0 .8rem;
+	text-align: center;
+	position: relative;
+}.cashpage .timefilter>div input{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	display: block;
+	background: none;
+	height: .7rem;
+	padding-top: .3rem;
+	text-align: center;
+	border: none;
 }
