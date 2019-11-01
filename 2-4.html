@@ -115,7 +115,15 @@
 					<!--  -->
 					<div class="input-row rate-input-row mt20"><input type="text" placeholder="花瓣比例"></div>
 					<div class="subtitle mt20">应用到所有授权品种</div>
-					<div class="input-row select-input-row mt20">是，批量变更已有品种比例</div>
+					<div class="input-row select-input-row mt20"><span>是，批量变更已有品种比例</span>
+						<div class="list">
+							<ul class="sort">
+								<li class="active">综合排序</li>
+								<li>离我最近</li>
+								<li>好评优先</li>
+							</ul>
+						</div>
+					</div>
 					<p class="tip red mt20">温馨提示：花瓣值等于销售金额乘以花瓣比例。</p>
 					<p class="tip">设置后，默认花瓣比例将应用到所有授权的品种。你也可以单个品种设置花瓣比例。</p>
 				</div>
@@ -199,5 +207,23 @@
 	/* 删除 弹出框确认事件 */
 	$('.win-alert .primary').click(function() {
 		$(this).closest('.win').fadeOut()
+	});
+	/* 打开下拉 */
+	$('.select-input-row').click(function(){
+		$(this).addClass('active')
+	});
+	$(document).bind("click", function(event) { //点击空白处，设置的弹框消失
+		var _con = $('.select-input-row'); // 设置目标区域
+		if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+			{
+				$('.select-input-row.active').removeClass('active');
+			}
+		}
+	});
+	$('.select-input-row .list').on('click','li',function(e){
+		e.stopPropagation();
+		$(this).addClass('active').siblings('.active').removeClass('active');
+		$('.select-input-row').removeClass('active');
+		$('.select-input-row span').text($(this).text())
 	})
 </script>
