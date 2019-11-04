@@ -1076,6 +1076,31 @@
 .mylowerbreed .filterbar>div .list  li.active {
 	color: #ffab00;
 }
+.mylowerbreed .filterbar>div .morelist.list{
+	padding-left: 0;
+	overflow: hidden;
+	
+}
+.mylowerbreed .filterbar>div .morelist>.sort{
+	width: 40%;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
+	background: #efefef;
+	float: left;
+}.mylowerbreed .filterbar>div .morelist>.subsort{
+	width: 60%;
+	padding-left: .2rem;float: left;
+}
+.mylowerbreed .filterbar>div .morelist>.subsort ul:not(:first-child){
+	display: none;
+}
+.mylowerbreed .filterbar>div .morelist>.sort li{
+	
+	padding-left: .2rem;
+}
+.mylowerbreed .filterbar>div .list.morelist  li.active{
+	background: #fff;
+}
 /* 添加下级品种 */
 .addmylowerbreedlist,
 .mybreed .mybreedlist,

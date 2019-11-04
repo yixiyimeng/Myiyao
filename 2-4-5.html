@@ -25,16 +25,49 @@
 					<span>比例<i class="sort"></i></span>
 				</div>
 				<div class="clearfix">
-					<span class="filter-item">自有<i class="down"></i><div class="list">
+					<span class="filter-item">自有<i class="down"></i>
+						<div class="list">
 							<ul class="sort">
 								<li class="active">综合排序</li>
 								<li>离我最近</li>
 								<li>好评优先</li>
 							</ul>
-						</div></span>
+						</div>
+					</span>
 					<span class="filter-item">品牌<i class="down"></i></span>
 					<span class="filter-item">科室<i class="down"></i></span>
-					<span class="filter-item">分类<i class="down"></i></span>
+					<span class="filter-item">分类<i class="down"></i>
+						<div class="list morelist clearfix">
+							<ul class="sort">
+								<li class="active">综合排序</li>
+								<li>离我最近</li>
+								<li>好评优先</li>
+							</ul>
+							<div class="subsort ">
+								<ul class="sort">
+									<li class="active">1综合排序</li>
+									<li>离我最近</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+								</ul>
+								<ul class="sort">
+									<li class="active">2综合排序</li>
+									<li>离我最近</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+								</ul>
+								<ul class="sort">
+									<li class="active">3综合排序</li>
+									<li>离我最近</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+									<li>好评优先</li>
+								</ul>
+							</div>
+						</div>
+					</span>
 				</div>
 			</div>
 			<div class="addmylowerbreedlist">
@@ -115,7 +148,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</body>
 </html>
 <script src="js/jquery-1.10.1.min.js"></script>
@@ -147,10 +180,10 @@
 	})
 	/* 统一设置比例 */
 	$('.selectftbar a').click(function() {
-		if(checknum==0){
+		if (checknum == 0) {
 			showMessage('请至少选择一个品种')
 			return false;
-			}
+		}
 		$('.win-setrate .title em').text(checknum);
 		$('.win-setrate').fadeIn()
 	});
@@ -158,7 +191,7 @@
 	$('.win-setrate .primary').click(function() {
 		$(this).closest('.win').fadeOut()
 	});
-	
+
 	/* 建议调价提示框 */
 	$('.goodslist').on('click', '.edit', function() {
 		$('.win-alert').fadeIn()
@@ -181,7 +214,15 @@
 			}
 		}
 	});
-	$('.filter-item').on('click', 'ul li', function() {
-		$(this).addClass('active').siblings('.active').removeClass('active')
+	$('.filter-item').on('click', 'ul li', function(event) {
+		event.stopPropagation();
+		$(this).addClass('active').siblings('.active').removeClass('active');
+		if ($(this).closest('.subsort').hasClass('subsort') || !$(this).closest('.list').hasClass('morelist')) {
+			$(this).closest('.filter-item.active').removeClass('active');
+		} else {
+			var index = $(this).index();
+			$(this).closest('.list').find('.subsort ul').hide();
+			$(this).closest('.list').find('.subsort ul').eq(index).show().find('li').eq(0).addClass('active').siblings('.active').removeClass('active')
+		}
 	})
 </script>
