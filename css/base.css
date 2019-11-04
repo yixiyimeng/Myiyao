@@ -1050,7 +1050,8 @@
 .mylowerbreed .filterbar>div+div {
 	border-top: 1px solid #f4f4f4;
 }
-.mylowerbreed .filterbar>div  .list {
+.mylowerbreed .filterbar>div  .list,
+.mygoods .filterbar  .list{
 	position: absolute;
 	top: .75rem;
 	left: 0;
@@ -1067,38 +1068,46 @@
 	display: block;
 
 }
-.mylowerbreed .filterbar>div .list  li {
+.mylowerbreed .filterbar>div .list  li,
+.mygoods .filterbar  .list li{
 	line-height: .8rem;
 	border-bottom: 1px solid #f7f7f7;
 	color: #666
 }
 
-.mylowerbreed .filterbar>div .list  li.active {
+.mylowerbreed .filterbar>div .list  li.active,
+.mygoods .filterbar  .list li.active{
 	color: #ffab00;
 }
-.mylowerbreed .filterbar>div .morelist.list{
+.mylowerbreed .filterbar>div .morelist.list,
+.mygoods .filterbar  .morelist.list{
 	padding-left: 0;
 	overflow: hidden;
 	
 }
-.mylowerbreed .filterbar>div .morelist>.sort{
+.mylowerbreed .filterbar>div .morelist>.sort,
+.mygoods .filterbar  .morelist>.sort{
 	width: 40%;
 	padding-bottom: 9999px;
 	margin-bottom: -9999px;
 	background: #efefef;
 	float: left;
-}.mylowerbreed .filterbar>div .morelist>.subsort{
+}.mylowerbreed .filterbar>div .morelist>.subsort,
+.mygoods .filterbar .morelist>.subsort{
 	width: 60%;
 	padding-left: .2rem;float: left;
 }
-.mylowerbreed .filterbar>div .morelist>.subsort ul:not(:first-child){
+.mylowerbreed .filterbar>div .morelist>.subsort ul:not(:first-child),
+.mygoods .filterbar .morelist>.subsort ul:not(:first-child){
 	display: none;
 }
-.mylowerbreed .filterbar>div .morelist>.sort li{
+.mylowerbreed .filterbar>div .morelist>.sort li,
+.mygoods .filterbar .morelist>.sort li{
 	
 	padding-left: .2rem;
 }
-.mylowerbreed .filterbar>div .list.morelist  li.active{
+.mylowerbreed .filterbar>div .list.morelist  li.active,
+.mygoods .filterbar .list.morelist  li.active{
 	background: #fff;
 }
 /* 添加下级品种 */
@@ -1255,6 +1264,7 @@
 	font-size: .28rem;
 	color: #666;
 	text-align: center;
+	position: relative;
 }
 
 .mygoods .filterbar i,

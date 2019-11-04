@@ -27,9 +27,47 @@
 			</div>
 			<!-- 筛选 -->
 			<div class="filterbar mt30 flex flex-align-center">
-				<span class="flex-1">品牌<i class="down"></i></span>
+				<span class="flex-1 filter-item">品牌<i class="down"></i>
+				<div class="list">
+					<ul class="sort">
+						<li class="active">综合排序</li>
+						<li>离我最近</li>
+						<li>好评优先</li>
+					</ul>
+				</div>
+				</span>
 				<span class="line"></span>
-				<span class="flex-1">分类<i class="down"></i></span>
+				<span class="flex-1 filter-item">分类<i class="down"></i>
+				<div class="list morelist clearfix">
+					<ul class="sort">
+						<li class="active">综合排序</li>
+						<li>离我最近</li>
+						<li>好评优先</li>
+					</ul>
+					<div class="subsort ">
+						<ul class="sort">
+							<li class="active">1综合排序</li>
+							<li>离我最近</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+						</ul>
+						<ul class="sort">
+							<li class="active">2综合排序</li>
+							<li>离我最近</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+						</ul>
+						<ul class="sort">
+							<li class="active">3综合排序</li>
+							<li>离我最近</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+							<li>好评优先</li>
+						</ul>
+					</div>
+				</div></span>
 			</div>
 			<div class="goodslist">
 				<div class="goods-item flex flex-align-center">
@@ -76,5 +114,29 @@
 <script src="js/common.js"></script>
 <script src="js/toast.js"></script>
 <script>
-	
+	/* 打开下拉 */
+	$('.filterbar  .filter-item').click(function(event) {
+		event.stopPropagation();
+		$(this).toggleClass('active');
+		$(this).siblings('.active').removeClass('active')
+	})
+	$(document).bind("click", function(event) { //点击空白处，设置的弹框消失
+		var _con = $('.filterbar'); // 设置目标区域
+		if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+			{
+				$('.filter-item.active').removeClass('active');
+			}
+		}
+	});
+	$('.filter-item').on('click', 'ul li', function(event) {
+		event.stopPropagation();
+		$(this).addClass('active').siblings('.active').removeClass('active');
+		if ($(this).closest('.subsort').hasClass('subsort') || !$(this).closest('.list').hasClass('morelist')) {
+			$(this).closest('.filter-item.active').removeClass('active');
+		} else {
+			var index = $(this).index();
+			$(this).closest('.list').find('.subsort ul').hide();
+			$(this).closest('.list').find('.subsort ul').eq(index).show().find('li').eq(0).addClass('active').siblings('.active').removeClass('active')
+		}
+	})
 </script>
